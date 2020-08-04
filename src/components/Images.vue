@@ -10,8 +10,9 @@
         </div>
     </div>
     <template v-if="hits.length">
-        <div v-for="hit in hits" :key="hit.id">
+        <div class="img" v-for="hit in hits" :key="hit.id">
             <img :src="hit.webformatURL" alt="">
+            <span class="user">Autor: {{hit.user}}</span>
         </div>
     </template>
     <div v-else>Please, select param and wait...</div>
@@ -67,8 +68,14 @@ export default {
 </script>
 
 <style scoped>
-select {
-    width: 200px;
-    height: 20px;
+.img{
+    position: relative;
+}
+.user{
+    position: absolute;
+    font-size: 20px;
+    top: 20px;
+    left: 100px;
+    color: #fff;
 }
 </style>
